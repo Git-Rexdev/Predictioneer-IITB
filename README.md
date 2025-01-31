@@ -20,8 +20,7 @@ pip install numpy pandas matplotlib seaborn scikit-learn requests tqdm
 1. Clone the repository and navigate to the project directory:
 
 ```bash
-git clone <repo_url>
-cd <repo_directory>
+git clone https://github.com/Git-Rexdev/Predictioneer-IITB.git
 ```
 
 2. Run the Jupyter Notebook:
