@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-    --primary: #44daff;
-    --primary-dark: #0088cc;
+    --primary:#1B4965;
+    --primary-dark: #62B6CB;
     --dark: #0a0a0a;
     --darker: #070707;
-    --light: #ffffff;
+    --light: #BEE9E8;
     --gray: #888888;
-    --gradient: linear-gradient(135deg, #44daff 0%, #0088cc 100%);
-    --neon-glow: 0 0 10px rgba(68, 218, 255, 0.5),
-                 0 0 20px rgba(68, 218, 255, 0.3),
+    --dark-gray:#424242;
+    --gradient: linear-gradient(135deg,#4b6cb7 0%,#182848 100%);
+    --gradient-dark: linear-gradient(135deg,#2BC0E4 0%, #EAECC6 100%);
+    --neon-glow: 0 0 10px rgba(68, 218, 255, 0.845),
+                 0 0 20px rgba(231, 250, 255, 0.3),
                  0 0 30px rgba(68, 218, 255, 0.1);
 }
 
@@ -21,8 +23,8 @@
 }
 
 body {
-    background: var(--dark);
-    color: var(--light);
+    background: var(--light);
+    color: var(--dark);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -34,12 +36,12 @@ body {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 50% 50%, rgba(68, 218, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(68, 218, 255, 0.05) 0%, transparent 30%),
-        radial-gradient(circle at 20% 80%, rgba(0, 136, 204, 0.05) 0%, transparent 30%),
+        radial-gradient(circle at 50% 50%, rgba(22, 163, 198, 0.874) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(117, 214, 233, 0.568) 0%, transparent 30%),
+        radial-gradient(circle at 20% 80%, rgb(142, 183, 203) 0%, transparent 30%),
         url('../images/bg.png') no-repeat center center fixed;
     background-size: cover;
-    opacity: 0.15;
+    opacity: 0.30;
     z-index: -1;
     transition: transform 0.3s ease-out;
 }
@@ -50,7 +52,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(7, 7, 7, 0.95);
+    background: var(--primary);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(68, 218, 255, 0.1);
     padding: 1rem 5%;
@@ -84,17 +86,18 @@ header {
 .logo-text {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--light);
+    color: white;
     margin-left: 0.2rem;
 }
 
 .logo-text span {
-    color: var(--primary);
+    color: var(--dark);
 }
 
 nav {
     display: flex;
     gap: 2rem;
+    background-color: var(--primary);
 }
 
 nav a {
@@ -117,18 +120,18 @@ nav a i {
 }
 
 nav a:hover {
-    background: rgba(68, 218, 255, 0.1);
+    background: var(--primary);
     transform: translateY(-1px);
 }
 
 nav a.active {
-    background: var(--gradient);
-    color: var(--dark);
+    background: var(--primary-dark);
+    color: var(--primary);
     font-weight: 600;
 }
 
 nav a.active i {
-    color: var(--dark);
+    color: var(--primary);
 }
 
 /* Main Content */
@@ -176,7 +179,7 @@ nav a.active i {
 }
 
 .description {
-    color: var(--gray);
+    color: var(--dark-gray);
     margin-bottom: 3rem;
     font-size: 1.1rem;
     line-height: 1.8;
@@ -194,14 +197,14 @@ nav a.active i {
     background: rgba(255, 255, 255, 0.03);
     padding: 2rem;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
 
 .feature-item:hover {
     transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(68, 218, 255, 0.2);
+    border-color: black;
 }
 
 .feature-item i {
@@ -217,7 +220,7 @@ nav a.active i {
 }
 
 .feature-item p {
-    color: var(--gray);
+    color: var(--dark-gray);
     font-size: 0.95rem;
     line-height: 1.6;
 }
@@ -247,14 +250,14 @@ nav a.active i {
 }
 
 .btn-primary {
-    background: var(--gradient);
-    color: var(--dark);
+    background: var(--primary);
+    color: var(--light);
     box-shadow: 0 4px 15px rgba(68, 218, 255, 0.3);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(68, 218, 255, 0.4);
+    box-shadow: 0 6px 20px var(--gray);
 }
 
 .btn-secondary {
@@ -305,21 +308,23 @@ nav a.active i {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    padding-top: 15%;
 }
 
 .stat-item {
     background: rgba(255, 255, 255, 0.03);
     padding: 1.5rem;
+    width: 200px;
     border-radius: 12px;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
 
 .stat-item:hover {
     transform: translateY(-3px);
     background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(68, 218, 255, 0.2);
+    border-color: black;
 }
 
 .stat-item i {
@@ -335,7 +340,7 @@ nav a.active i {
 }
 
 .stat-item p {
-    color: var(--gray);
+    color: var(--dark-gray);
     font-size: 0.9rem;
 }
 
